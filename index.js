@@ -380,7 +380,10 @@ socket.on('showAdicionais', async (message) => {
 			        <h2 class="card-title">+1 Instância</h2>
 			        <p class="card-text">Comprado em: ${timeConverter(ad.hora_compra)} | Expira em: ${timeConverter(ad.hora_expira)}</p>
 			    </div>`)
-	})
+	});
+	if(adicionais.length == 0){
+		adicionais.push(`Nenhum adicional contratado.`);
+	}
 	Swal.fire({
 		icon: `success`,
 		html: `<div class="card card-raised">${adicionais.join("\n")}</div>`,
